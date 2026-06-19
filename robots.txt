@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ntepube-xx.github.io/main-portal-aiyouxi-com-cn/sitemap.xml
