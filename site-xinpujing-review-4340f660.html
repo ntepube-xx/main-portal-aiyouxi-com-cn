@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳门新葡京 · 网站介绍</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #faf7f2;
+            font-family: 'Georgia', 'Times New Roman', 'Songti SC', serif;
+            color: #3b3a39;
+            line-height: 1.75;
+            padding: 0 1.5rem 3rem;
+        }
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fffdfa;
+            box-shadow: 0 0 30px rgba(0,0,0,0.03);
+            border-radius: 28px;
+            padding: 2.2rem 2.5rem 3rem;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #e5ddd4;
+        }
+        .site-name {
+            font-weight: 500;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            color: #ab8b6b;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.6rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #5c5146;
+            font-size: 0.95rem;
+            transition: color 0.15s;
+            border-bottom: 1px solid transparent;
+        }
+        .nav-links a:hover {
+            color: #ab8b6b;
+            border-bottom-color: #ab8b6b;
+        }
+
+        /* hero 区域 */
+        .hero {
+            margin: 2.5rem 0 2rem;
+        }
+        .hero h1 {
+            font-size: 2.1rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: #2d2a26;
+            margin-bottom: 1.2rem;
+        }
+        .hero p {
+            font-size: 1.05rem;
+            color: #5a524b;
+            max-width: 80%;
+            line-height: 1.7;
+        }
+
+        /* 引用 / 提示框 */
+        .inset-box {
+            background: #f5efe7;
+            border-left: 6px solid #d4b99a;
+            padding: 1.5rem 2rem;
+            margin: 2.2rem 0 2.6rem;
+            border-radius: 0 16px 16px 0;
+            font-style: normal;
+        }
+        .inset-box p {
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
+        }
+        .inset-box p:last-child {
+            margin-bottom: 0;
+        }
+        .inset-box strong {
+            color: #7a624c;
+            font-weight: 500;
+        }
+
+        /* 三个场景模块 — 卡片式 */
+        .scenes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin: 2.8rem 0 2.2rem;
+        }
+        .scene-card {
+            background: #ffffff;
+            border: 1px solid #ece4da;
+            border-radius: 20px;
+            padding: 1.5rem 1.2rem 1.6rem;
+            transition: box-shadow 0.15s;
+        }
+        .scene-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+        }
+        .scene-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #8b7359;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.02em;
+            border-bottom: 1px dashed #dad1c6;
+            padding-bottom: 0.5rem;
+        }
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #4e4842;
+            line-height: 1.65;
+        }
+
+        /* 常见说明 */
+        .faq-section {
+            margin-top: 2.8rem;
+            border-top: 1px solid #e5ddd4;
+            padding-top: 1.8rem;
+        }
+        .faq-section h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #3b352f;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.04em;
+        }
+        .faq-item {
+            margin-bottom: 1.4rem;
+        }
+        .faq-q {
+            font-weight: 500;
+            color: #6c5d4e;
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+        .faq-a {
+            padding-left: 1rem;
+            font-size: 0.95rem;
+            color: #4e4944;
+            border-left: 2px solid #ddd3c8;
+            padding-left: 1.2rem;
+        }
+
+        /* 内联链接样式 */
+        a {
+            color: #8f7459;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 0.5px;
+            transition: color 0.1s;
+        }
+        a:hover {
+            color: #b39273;
+            text-decoration-thickness: 1.2px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 720px) {
+            .page { padding: 1.5rem 1.2rem; }
+            .hero p { max-width: 100%; }
+            .top-nav { flex-wrap: wrap; gap: 0.4rem; }
+            .nav-links { gap: 1rem; flex-wrap: wrap; }
+            .scenes { grid-template-columns: 1fr; gap: 1.2rem; }
+            .hero h1 { font-size: 1.7rem; }
+            .inset-box { padding: 1.2rem 1.2rem; }
+        }
+        @media (max-width: 480px) {
+            body { padding: 0 0.6rem 2rem; }
+            .page { border-radius: 20px; padding: 1rem 1rem 1.8rem; }
+            .nav-links { gap: 0.8rem; font-size: 0.9rem; }
+            .scene-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- 顶部导航 -->
+    <div class="top-nav">
+        <span class="site-name">新葡京</span>
+        <div class="nav-links">
+            <a href="#">概览</a>
+            <a href="#">场景</a>
+            <a href="#">说明</a>
+        </div>
+    </div>
+
+    <!-- hero 区域 -->
+    <div class="hero">
+        <h1>识别用途，从名字开始</h1>
+        <p>初次看见「澳门新葡京」的人，往往先被名字里的地域与地标气息吸引。它既不是抽象平台，也不是工具站点——它指向一个具体的、有辨识度的线上区域。下面从几个侧面快速描述它的用途轮廓。</p>
+    </div>
+
+    <!-- 引用提示框 -->
+    <div class="inset-box">
+        <p><strong>一点观察</strong></p>
+        <p>很多人第一次打开 <a href="https://site-xinpujing.com">澳门新葡京</a>，并非为了某项功能，而是出于对名称的好奇——想看看这个名字背后对应的是怎样的页面、提供哪些信息。这种直觉式的“先看看”，恰好是理解它的起点。</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes">
+        <div class="scene-card">
+            <h3>场景 · 信息确认</h3>
+            <p>当你在别处看到「澳门新葡京」这个名字，想确认它是否与记忆中的某个网站一致，或者想了解它当前提供什么内容——直接打开就是最自然的方式。这个页面承担的就是那种“一站确认”的角色。</p>
+        </div>
+        <div class="scene-card">
+            <h3>场景 · 内容浏览</h3>
+            <p>有些用户会定期过来看看页面结构、信息是否更新，或者仅仅因为熟悉而停留。它的设计偏向阅读与了解，没有打扰式的跳转，适合随手翻阅。</p>
+        </div>
+        <div class="scene-card">
+            <h3>场景 · 引述与分享</h3>
+            <p>在讨论或记录时，人们需要引用一个确切的地址。将 <a href="https://site-xinpujing.com">澳门新葡京</a> 作为锚点分享出去，比口头描述更准确。这也是很多索引或推荐页面的常见用法。</p>
+        </div>
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <div class="faq-section">
+        <h2>常见简要说明</h2>
+        <div class="faq-item">
+            <div class="faq-q">这个网站主要提供什么？</div>
+            <div class="faq-a">可以理解为一个带有信息展示与索引属性的页面，聚焦于「澳门新葡京」这个名称的相关内容。没有复杂的操作模块，适合先看再决定下一步。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">为什么页面看起来很简单？</div>
+            <div class="faq-a">轻量导航式的设计初衷就是为了让人快速抓住核心——顶部导航、核心介绍、几个场景模块，外加一段说明。信息密度适中，不会让人一进来就感到杂乱。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">我可以直接使用里面的链接吗？</div>
+            <div class="faq-a">页面中出现的链接就是指向 <a href="https://site-xinpujing.com">澳门新葡京</a> 本身，你可以按需打开。所有内容均基于自然叙述，没有隐藏跳转或诱导点击。</div>
+        </div>
+    </div>
+
+    <!-- 页脚 quiet 提示 -->
+    <div style="margin-top: 2.6rem; font-size: 0.85rem; color: #a0968a; border-top: 1px solid #ece4da; padding-top: 1.2rem; text-align: center; letter-spacing: 0.3px;">
+        <span>页面基于真实名称与轻量导航结构 · 信息供参考</span>
+    </div>
+</div>
+</body>
+</html>
